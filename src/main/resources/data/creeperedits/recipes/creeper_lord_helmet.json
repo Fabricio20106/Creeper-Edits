@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#C#",
+    "GGG"
+  ],
+  "key": {
+    "#": {
+      "item": "creeperedits:creeper_ingot"
+    },
+    "C": {
+      "item": "creeperedits:creeper_helmet"
+    },
+    "G": {
+      "item": "minecraft:gunpowder"
+    }
+  },
+  "result": {
+    "item": "creeperedits:creeper_lord_helmet"
+  }
+}

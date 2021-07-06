@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "S"
+  ],
+  "key": {
+    "#": {
+      "item": "creeperedits:creeper_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "creeperedits:creeper_sword"
+  }
+}
