@@ -1,6 +1,7 @@
 package com.sophicreeper.creeperedits.item;
 
 import com.sophicreeper.creeperedits.CreeperEdits;
+import com.sophicreeper.creeperedits.block.CEBlocks;
 import com.sophicreeper.creeperedits.item.custom.CreeperBucketItem;
 import com.sophicreeper.creeperedits.item.custom.CreeperLordArmorItem;
 import com.sophicreeper.creeperedits.item.custom.CreeperMilkBucketItem;
@@ -17,6 +18,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class CEItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CreeperEdits.MOD_ID);
 
+    public static final RegistryObject<Item> CREEPWOOD_SIGN = ITEMS.register("creepwood_sign", () -> new SignItem(new Item.Properties().stacksTo(16).tab(CETab.TAB), CEBlocks.CREEPWOOD_SIGN.get(), CEBlocks.CREEPWOOD_WALL_SIGN.get()));
     public static final RegistryObject<Item> RAW_CREEPER = ITEMS.register("raw_creeper", () -> new Item(new Item.Properties().tab(CETab.TAB)));
     public static final RegistryObject<Item> CREEPER_INGOT = ITEMS.register("creeper_ingot", () -> new Item(new Item.Properties().tab(CETab.TAB)));
     public static final RegistryObject<Item> CREEPER_NUGGET = ITEMS.register("creeper_nugget", () -> new Item(new Item.Properties().tab(CETab.TAB)));

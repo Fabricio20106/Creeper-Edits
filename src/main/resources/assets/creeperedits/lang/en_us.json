@@ -1,6 +1,9 @@
 {
   "itemGroup.creeper": "Creeper Edits",
 
+  "block.creeperedits.creepwood_sign": "Creepwood Sign",
+  "block.creeperedits.creepwood_wall_sign": "Creepwood Wall Sign",
+
   "item.creeperedits.raw_creeper": "Raw Creeper",
   "item.creeperedits.creeper_ingot": "Creeper Ingot",
   "item.creeperedits.creeper_nugget": "Creeper Nugget",
