@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "creeperedits:creeper_lord_helmet",
+    "creeperedits:creeper_helmet",
+    "creeperedits:creeper_chestplate",
+    "creeperedits:creeper_leggings",
+    "creeperedits:creeper_boots"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "asset_name": "creeper",
+  "description": {
+    "color": "#6adb6d",
+    "translate": "trim_material.creeperedits.creeper"
+  },
+  "ingredient": "creeperedits:creeper_ingot",
+  "item_model_index": 1.0
+}

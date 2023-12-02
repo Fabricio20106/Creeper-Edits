@@ -1,0 +1,9 @@
+{
+  "asset_name": "creeper_lord",
+  "description": {
+    "color": "#136400",
+    "translate": "trim_material.creeperedits.creeper_lord"
+  },
+  "ingredient": "creeperedits:creeperpowder",
+  "item_model_index": 1.0
+}
