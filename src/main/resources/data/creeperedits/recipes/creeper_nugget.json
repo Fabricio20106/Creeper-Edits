@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "creeperedits:creeper_ingot"
+      "tag": "forge:ingots/creeper"
     }
   ],
   "result": {

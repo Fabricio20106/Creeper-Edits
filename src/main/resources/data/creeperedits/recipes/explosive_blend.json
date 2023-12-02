@@ -5,10 +5,10 @@
     "#G"
   ],
   "key": {
-    "G": {
-      "item": "creeperedits:creeper_ingot"
-    },
     "#": {
+      "tag": "forge:ingots/iron"
+    },
+    "G": {
       "item": "minecraft:gunpowder"
     }
   },

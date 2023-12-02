@@ -7,10 +7,10 @@
   ],
   "key": {
     "#": {
-      "item": "creeperedits:creeper_ingot"
+      "tag": "forge:ingots/creeper"
     },
     "S": {
-      "item": "minecraft:stick"
+      "tag": "forge:rods/wooden"
     }
   },
   "result": {

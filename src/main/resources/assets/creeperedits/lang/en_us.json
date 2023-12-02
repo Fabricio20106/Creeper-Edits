@@ -1,6 +1,7 @@
 {
-  "itemGroup.creeper": "Creeper Edits (TtM)",
+  "itemGroup.creeper": "Creeper Edits",
 
+  "item.creeperedits.raw_creeper": "Raw Creeper",
   "item.creeperedits.creeper_ingot": "Creeper Ingot",
   "item.creeperedits.creeper_nugget": "Creeper Nugget",
   "item.creeperedits.creeper_helmet": "Creeper Helmet",
@@ -9,11 +10,12 @@
   "item.creeperedits.creeper_boots": "Creeper Boots",
   "item.creeperedits.creeper_lord_helmet": "Creeper Lord Helmet",
   "item.creeperedits.creeper_bowl": "Creeper Bowl",
-  "item.creeperedits.creeper_powder": "Creeperpowder",
+  "item.creeperedits.creeper_powder": "Explosive Blend",
   "item.creeperedits.creeper_bucket": "Creeper Bucket",
   "item.creeperedits.creeper_water_bucket": "Creeper Water Bucket",
   "item.creeperedits.creeper_lava_bucket": "Creeper Lava Bucket",
   "item.creeperedits.creeper_milk_bucket": "Creeper Milk Bucket",
+  "item.creeperedits.creeper_powder_snow_bucket": "Creeper Powder Snow Bucket",
   "item.creeperedits.creeper_horse_armor": "Creeper Horse Armor",
   "item.creeperedits.creeper_sword": "Creeper Sword",
   "item.creeperedits.creeper_pickaxe": "Creeper Pickaxe",
