@@ -2,6 +2,7 @@ package com.sophicreeper.creeperedits;
 
 import com.sophicreeper.creeperedits.block.CEBlocks;
 import com.sophicreeper.creeperedits.blockentity.CEBlockEntities;
+import com.sophicreeper.creeperedits.config.CEConfigs;
 import com.sophicreeper.creeperedits.item.CEItems;
 import com.sophicreeper.creeperedits.misc.CEPaintings;
 import com.sophicreeper.creeperedits.util.CEWoodTypes;
@@ -12,8 +13,10 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
@@ -37,6 +40,8 @@ public class CreeperEdits {
         CEBlockEntities.BLOCK_ENTITIES.register(eventBus);
         CEItems.ITEMS.register(eventBus);
         CEPaintings.PAINTINGS.register(eventBus);
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CEConfigs.COMMON_SPEC, "jtw-mods/creeperedits-common.toml");
     }
 
     public static ResourceLocation resourceLoc(String name) {
@@ -49,7 +54,6 @@ public class CreeperEdits {
 
     public void clientSetup(final FMLClientSetupEvent event) {
         Atlases.addWoodType(CEWoodTypes.CREEPWOOD);
-
         ClientRegistry.bindTileEntityRenderer(CEBlockEntities.CREEPER_SIGN.get(), SignTileEntityRenderer::new);
     }
 

@@ -1,0 +1,31 @@
+{
+  "itemGroup.creeperedits.main": "Creeper Edits",
+
+  "block.creeperedits.creepwood_sign": "Creepwood Sign",
+  "block.creeperedits.creepwood_wall_sign": "Creepwood Wall Sign",
+
+  "item.creeperedits.raw_creeper": "Creeper bruto",
+  "item.creeperedits.creeper_ingot": "Barra de creeper",
+  "item.creeperedits.creeper_nugget": "Pepita de creeper",
+  "item.creeperedits.creeper_helmet": "Capacete de creeper",
+  "item.creeperedits.creeper_chestplate": "Peitoral de creeper",
+  "item.creeperedits.creeper_leggings": "Calças de creeper",
+  "item.creeperedits.creeper_boots": "Botas de creeper",
+  "item.creeperedits.creeper_lord_helmet": "Capacete do Lord Creeper",
+  "item.creeperedits.creeper_bowl": "Tigela de creeper",
+  "item.creeperedits.creeper_powder": "Mistura explosiva",
+  "item.creeperedits.creeper_bucket": "Balde de creeper",
+  "item.creeperedits.creeper_water_bucket": "Balde de água de creeper",
+  "item.creeperedits.creeper_lava_bucket": "Balde de lava de creeper",
+  "item.creeperedits.creeper_milk_bucket": "Balde de leite de creeper",
+  "item.creeperedits.creeper_powder_snow_bucket": "Balde de neve fofa de creeper",
+  "item.creeperedits.creeper_horse_armor": "Armadura para cavalo de creeper",
+  "item.creeperedits.creeper_sword": "Espada de creeper",
+  "item.creeperedits.creeper_pickaxe": "Picareta de creeper",
+  "item.creeperedits.creeper_shovel": "Pá de creeper",
+  "item.creeperedits.creeper_axe": "Machado de creeper",
+  "item.creeperedits.creeper_hoe": "Enxada de creeper",
+
+  "tooltip.creeperedits.creeper_lord_helmet.line1": "§7Provê Resistência por 10 segundos quando",
+  "tooltip.creeperedits.creeper_lord_helmet.line2": "§7fora da água, como um Casco de tartaruga."
+}

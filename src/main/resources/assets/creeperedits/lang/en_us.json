@@ -1,5 +1,5 @@
 {
-  "itemGroup.creeper": "Creeper Edits",
+  "itemGroup.creeperedits.main": "Creeper Edits",
 
   "block.creeperedits.creepwood_sign": "Creepwood Sign",
   "block.creeperedits.creepwood_wall_sign": "Creepwood Wall Sign",
@@ -24,5 +24,8 @@
   "item.creeperedits.creeper_pickaxe": "Creeper Pickaxe",
   "item.creeperedits.creeper_shovel": "Creeper Shovel",
   "item.creeperedits.creeper_axe": "Creeper Axe",
-  "item.creeperedits.creeper_hoe": "Creeper Hoe"
+  "item.creeperedits.creeper_hoe": "Creeper Hoe",
+
+  "tooltip.creeperedits.creeper_lord_helmet.line1": "§7Provides Resistance for 10 seconds when",
+  "tooltip.creeperedits.creeper_lord_helmet.line2": "§7outside of water, like the Turtle Shell."
 }

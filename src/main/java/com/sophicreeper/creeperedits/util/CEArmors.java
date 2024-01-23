@@ -1,11 +1,9 @@
 package com.sophicreeper.creeperedits.util;
 
 import com.sophicreeper.creeperedits.CreeperEdits;
-import com.sophicreeper.creeperedits.item.CEItems;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.LazyValue;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraftforge.api.distmarker.Dist;
@@ -13,11 +11,11 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.function.Supplier;
 
-public class CEArmorMaterials implements IArmorMaterial {
-    public static final CEArmorMaterials CREEPER = new CEArmorMaterials(CreeperEdits.MOD_ID + ":creeper", 15, new int[] {1, 3, 5, 2}, 25, SoundEvents.ARMOR_EQUIP_GOLD, 0, 0.05f,
-            () -> Ingredient.of(CEItems.CREEPER_INGOT.get()));
-    public static final CEArmorMaterials CREEPER_LORD = new CEArmorMaterials(CreeperEdits.MOD_ID + ":creeper_lord", 20, new int[] {3, 3, 5, 2}, 25, SoundEvents.ARMOR_EQUIP_GOLD, 1, 0.1f,
-            () -> Ingredient.of(CEItems.CREEPER_INGOT.get()));
+public class CEArmors implements IArmorMaterial {
+    public static final CEArmors CREEPER = new CEArmors(CreeperEdits.MOD_ID + ":creeper", 15, new int[] {1, 3, 5, 2}, 25, SoundEvents.ARMOR_EQUIP_GOLD, 0, 0.05f,
+            () -> Ingredient.of(CETags.Items.INGOTS_CREEPER));
+    public static final CEArmors CREEPER_LORD = new CEArmors(CreeperEdits.MOD_ID + ":creeper_lord", 20, new int[] {3, 3, 5, 2}, 25, SoundEvents.ARMOR_EQUIP_GOLD, 1, 0.1f,
+            () -> Ingredient.of(CETags.Items.INGOTS_CREEPER));
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[] {13, 15, 16, 11};
     private final String name;
@@ -27,9 +25,9 @@ public class CEArmorMaterials implements IArmorMaterial {
     private final SoundEvent equipSound;
     private final float toughness;
     private final float knockbackRes;
-    private final LazyValue<Ingredient> repairIngredient;
+    private final Supplier<Ingredient> repairIngredient;
 
-    public CEArmorMaterials(String name, int durabilityMultiplier, int[] protectionPerSlot, int enchValue, SoundEvent equipSound, float toughness, float knockbackRes, Supplier<Ingredient> repairIngredient) {
+    public CEArmors(String name, int durabilityMultiplier, int[] protectionPerSlot, int enchValue, SoundEvent equipSound, float toughness, float knockbackRes, Supplier<Ingredient> repairIngredient) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionForSlot = protectionPerSlot;
@@ -37,7 +35,7 @@ public class CEArmorMaterials implements IArmorMaterial {
         this.equipSound = equipSound;
         this.toughness = toughness;
         this.knockbackRes = knockbackRes;
-        this.repairIngredient = new LazyValue<>(repairIngredient);
+        this.repairIngredient = repairIngredient;
     }
 
     public int getDurabilityForSlot(EquipmentSlotType slot) {

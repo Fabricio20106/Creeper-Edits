@@ -3,7 +3,6 @@ buildscript {
         maven {
             url = 'https://files.minecraftforge.net/maven'
         }
-        jcenter()
         mavenCentral()
     }
     dependencies {
@@ -16,7 +15,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.16.5-v1.2'
+version = '1.16.5-v1.3'
 // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 group = 'com.sophicreeper.creeperedits'
 archivesBaseName = 'CreeperEdits'
@@ -26,13 +25,15 @@ sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = co
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    // The mappings can be changed at any time, and must be in the following format.
+    // The mappings can be changed at any time, and must be in the following format:
     // snapshot_YYYYMMDD   Snapshot are built nightly.
-    // stable_#            Stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
+    // stable_#                            Stables are built at the discretion of the MCP team.
+
+    // Use non-default mappings at your own risk, they may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
     mappings channel: 'official', version: '1.16.5'
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+    // An Srg-named sources jar is made by default. Uncomment this to disable.
+    // makeObfSourceJar = false
     
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -42,10 +43,10 @@ minecraft {
         client {
             workingDirectory project.file('run')
 
-            // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            // Recommended logging data for a user development environment.
+            property 'forge.logging.markers', 'SCAN,REGISTRIES'
 
-            // Recommended logging level for the console
+            // Recommended logging level for the console.
             property 'forge.logging.console.level', 'debug'
 
             mods {
@@ -58,10 +59,10 @@ minecraft {
         server {
             workingDirectory project.file('run')
 
-            // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            // Recommended logging data for a user development environment.
+            property 'forge.logging.markers', 'SCAN,REGISTRIES'
 
-            // Recommended logging level for the console
+            // Recommended logging level for the console.
             property 'forge.logging.console.level', 'debug'
 
             mods {
@@ -74,13 +75,13 @@ minecraft {
         data {
             workingDirectory project.file('run')
 
-            // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            // Recommended logging data for a user development environment.
+            property 'forge.logging.markers', 'SCAN,REGISTRIES'
 
-            // Recommended logging level for the console
+            // Recommended logging level for the console.
             property 'forge.logging.console.level', 'debug'
 
-            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
+            // Specify the mod id for data generation, where to output the resulting resource, and where to look for existing resources.
             args '--mod', 'creeperedits', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
@@ -98,43 +99,43 @@ sourceSets.main.resources {
 }
 
 dependencies {
-    // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
-    // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
-    // The userdev artifact is a special name and will get all sorts of transformations applied to it.
+    // Specify the Minecraft version to use.
+    // If this is any group other than 'net.minecraft', it is assumed that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
+    // The user development artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.39'
 
-    // Compile against the JEI API but do not include it at runtime.
+    // Compile against the Just Enough Items API but do not include it at runtime.
     compileOnly fg.deobf("mezz.jei:jei-${jei_version}:api")
-    // At runtime, use the full JEI jar.
+    // At runtime, use the full Just Enough Items jar.
     runtimeOnly fg.deobf("mezz.jei:jei-${jei_version}")
 
-    // You may put jars on which you depend on in ./libs or you may define them like so..
+    // You may put jars on which you depend on in ./libs or you may define them like so:
     // compile "some.group:artifact:version:classifier"
     // compile "some.group:artifact:version"
 
-    // Real examples
-    // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
+    // Real examples:
+    // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  / Adds Buildcraft to the development environment.
+    // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // Adds EJML (Efficient Java Matrix Library) to the development environment.
 
     // The 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
     // provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
 
-    // These dependencies get remapped to your current MCP mappings
+    // These dependencies get remapped to your current MCP mappings:
     // deobf 'com.mod-buildcraft:buildcraft:6.0.8:dev'
 
-    // For more info...
+    // For more information, see:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 }
 
 repositories {
     maven {
-        // JEI
+        // Just Enough Items
         name 'DVS1 Maven FS'
         url 'https://dvs1.progwml6.com/files/maven'
     }
     maven {
-        // Location of a maven mirror for JEI files, as a fallback.
+        // Location of a maven mirror for Just Enough Items' files, as a fallback.
         name = "ModMaven"
         url = "https://modmaven.k-4u.nl"
     }
@@ -143,13 +144,14 @@ repositories {
     }
 }
 
-// Example for how to get properties into the manifest for reading by the runtime..
+// Example for how to get properties into the manifest for reading by the runtime:
 jar {
     manifest {
         attributes([
             "Specification-Title": "Creeper Edits",
             "Specification-Vendor": "SophiCreeper",
-            "Specification-Version": "1", // We are version 1 of ourselves
+            // We are version one of ourselves.
+            "Specification-Version": "1",
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
             "Implementation-Vendor" :"SophiCreeper",
@@ -158,11 +160,11 @@ jar {
     }
 }
 
-// Example configuration to allow publishing using the maven-publish task
-// This is the preferred method to reobfuscate your jar file
+// Example configuration to allow publishing using the maven-publish task.
+// This is the preferred method to reobfuscate your jar file.
 jar.finalizedBy('reobfJar') 
-// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
-//publish.dependsOn('reobfJar')
+// However if you are in a multi-project build, development time needs unobfuscated jar files, so you can delay the obfuscation until publishing by doing
+// publish.dependsOn('reobfJar')
 
 publishing {
     publications {

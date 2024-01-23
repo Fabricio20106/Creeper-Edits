@@ -1,21 +1,19 @@
 package com.sophicreeper.creeperedits.util;
 
-import com.sophicreeper.creeperedits.item.CEItems;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.LazyValue;
 
 import java.util.function.Supplier;
 
 public class CETiers implements IItemTier {
-    public static final CETiers CREEPER = new CETiers(2, 250, 12, 2, 22, () -> Ingredient.of(CEItems.CREEPER_INGOT.get()));
+    public static final CETiers CREEPER = new CETiers(2, 250, 12, 2, 22, () -> Ingredient.of(CETags.Items.INGOTS_CREEPER));
 
     private final int harvestLevel;
     private final int durability;
     private final float harvestSpeed;
     private final float attackDamage;
     private final int enchantmentValue;
-    private final LazyValue<Ingredient> repairIngredient;
+    private final Supplier<Ingredient> repairIngredient;
 
     public CETiers(int harvestLevel, int durability, float harvestSpeed, float attackDamage, int enchantmentValue, Supplier<Ingredient> repairIngredient) {
         this.harvestLevel = harvestLevel;
@@ -23,7 +21,7 @@ public class CETiers implements IItemTier {
         this.harvestSpeed = harvestSpeed;
         this.attackDamage = attackDamage;
         this.enchantmentValue = enchantmentValue;
-        this.repairIngredient = new LazyValue<>(repairIngredient);
+        this.repairIngredient = repairIngredient;
     }
 
     public int getUses() {
